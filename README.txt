@@ -25,3 +25,17 @@ Replace the phone value in openWhatsApp() in js/main.js with the store's
 WhatsApp Business number. Automated replies and order confirmation require a
 WhatsApp Business API webhook/server; the static site provides the shopping
 handoff and cart message.
+
+Render deployment
+-----------------
+1. Open render.com and choose New > Web Service.
+2. Connect the GitHub repository `adity4545/apnaadda` and select the `main` branch.
+3. Render can use render.yaml automatically. If entering settings manually, use:
+	- Runtime: Node
+	- Build command: leave empty
+	- Start command: `node server.js`
+4. Add these environment variables in Render:
+	`RAZORPAY_KEY_ID`, `RAZORPAY_KEY_SECRET`, `GOOGLE_CLIENT_ID`, and `GOOGLE_CLIENT_SECRET`.
+5. Deploy and open the generated `https://...onrender.com/account.html` URL.
+6. In Google Cloud Console, add the Render site origin as an authorized JavaScript origin.
+7. Use Razorpay live keys only after testing with test keys and configuring the live domain.

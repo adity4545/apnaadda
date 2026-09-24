@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: apnaadda
+    runtime: node
+    buildCommand: ""
+    startCommand: node server.js
+    envVars:
+      - key: RAZORPAY_KEY_ID
+        sync: false
+      - key: RAZORPAY_KEY_SECRET
+        sync: false
+      - key: GOOGLE_CLIENT_ID
+        sync: false
+      - key: GOOGLE_CLIENT_SECRET
+        sync: false
