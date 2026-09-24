@@ -2,7 +2,7 @@ services:
   - type: web
     name: apnaadda
     runtime: node
-    buildCommand: ""
+    buildCommand: "echo Build complete"
     startCommand: node server.js
     envVars:
       - key: RAZORPAY_KEY_ID
