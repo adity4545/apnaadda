@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>document.documentElement.classList.add("js")</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ApnaAdda — Modern Fashion &amp; Clothing Store</title>
+<meta name="description" content="ApnaAdda clothing store with a curated product grid, category tiles, product detail page and shopping cart.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/vendor/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+
+<!-- ===== Announcement ===== -->
+<div class="announce">
+  Free express shipping on orders over <strong>$150</strong> &nbsp;·&nbsp; 30-day easy returns
+</div>
+
+<!-- ===== Header ===== -->
+<header class="site-header" id="siteHeader">
+  <div class="container-x">
+    <div class="nav-inner">
+      <a href="index.html" class="brand" aria-label="ApnaAdda home">ApnaAdda<span class="dot">.</span></a>
+
+      <nav aria-label="Primary">
+        <ul class="nav-links">
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="new.html" aria-current="page">New In</a></li>
+          <li><a href="women.html">Women</a></li>
+          <li><a href="men.html">Men</a></li>
+          <li><a href="index.html#lookbook">Lookbook</a></li>
+          <li><a href="sale.html" class="text-wine">Sale</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="icon-btn" id="searchToggle" aria-label="Search" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        </button>
+        <a href="account.html" class="icon-btn" aria-label="Account">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
+        </a>
+        <button class="icon-btn cart-pill" id="cartOpen" aria-label="Open cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+          <span class="cart-count" id="cartCount" aria-hidden="true">0</span>
+        </button>
+        <button class="icon-btn nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Search panel -->
+  <div class="search-panel" id="searchPanel" role="dialog" aria-label="Search products">
+    <div class="container-x">
+      <form class="search-form" role="search" onsubmit="return false;">
+        <svg viewBox="0 0 24 24" width="26" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input type="search" id="searchInput" placeholder="Search coats, dresses, boots…" autocomplete="off" aria-label="Search products">
+        <button type="button" class="icon-btn" id="searchClose" aria-label="Close search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+        </button>
+      </form>
+      <div class="search-suggest">
+        <span>Popular:</span>
+        <a href="#shop">Wool coats</a>
+        <a href="#shop">Silk dresses</a>
+        <a href="#sale">Sale under $100</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ===== Mobile nav ===== -->
+<div class="scrim" id="scrim"></div>
+<aside class="mobile-nav" id="mobileNav" aria-label="Mobile menu">
+  <div class="mobile-nav-head">
+    <span class="brand">ApnaAdda<span class="dot">.</span></span>
+    <button class="icon-btn" id="navClose" aria-label="Close menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+  </div>
+  <ul>
+    <li><a href="new.html">New In</a></li>
+    <li><a href="women.html">Women</a></li>
+    <li><a href="men.html">Men</a></li>
+    <li><a href="index.html#lookbook">Lookbook</a></li>
+    <li><a href="sale.html" class="text-wine">Sale</a></li>
+  </ul>
+  <div class="mobile-nav-foot">
+    <p>Free shipping over $150 · 30-day returns</p>
+    <p>hello@apnaadda.com</p>
+  </div>
+</aside>
+
+<main id="main">
+
+  <!-- ===== Hero ===== -->
+  <section class="hero">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow season">Autumn / Winter Collection</span>
+        <h1 class="hero-title">Dressed for the <em>cold-weather</em> season</h1>
+        <p>Considered wardrobe staples in natural wool, silk and leather — cut to last well beyond a single winter. Made in limited runs, never restocked twice.</p>
+        <div class="hero-cta">
+          <a href="#shop" class="btn-v btn-lg">Shop the collection</a>
+          <a href="#lookbook" class="link-underline">View lookbook
+            <svg viewBox="0 0 24 24" width="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="hero-media">
+        <img src="img/hero.jpg" alt="Model wearing the Marlowe wool coat over a ribbed knit against a stone wall" width="900" height="820" fetchpriority="high">
+        <div class="hero-tag">
+          <div class="p-name">The Marlowe Wool Coat</div>
+          <div class="p-price">$248</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-marquee" aria-hidden="true">
+      <div class="track">
+        <span>Responsibly sourced wool</span><span>Small-batch tailoring</span><span>Free returns</span><span>Carbon-neutral delivery</span>
+        <span>Responsibly sourced wool</span><span>Small-batch tailoring</span><span>Free returns</span><span>Carbon-neutral delivery</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Categories ===== -->
+  <section class="section" id="categories" aria-labelledby="cat-h">
+    <div class="container-x">
+      <div class="section-head reveal">
+        <div>
+          <span class="eyebrow">Shop by category</span>
+          <h2 class="section-title" id="cat-h">Find your edit</h2>
+        </div>
+        <a href="#shop" class="link-underline">All products
+          <svg viewBox="0 0 24 24" width="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+      <div class="cat-grid">
+        <a href="#shop" class="cat-tile reveal">
+          <img src="img/cat-women.jpg" alt="Woman in a tailored wool coat and knit" width="420" height="560" loading="lazy">
+          <div class="cat-label"><div><h3>Women</h3><span class="count">142 pieces</span></div>
+            <span class="go"><svg viewBox="0 0 24 24" width="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </div>
+        </a>
+        <a href="#shop" class="cat-tile reveal reveal-d1">
+          <img src="img/cat-men.jpg" alt="Man wearing a relaxed blazer and oxford shirt" width="420" height="560" loading="lazy">
+          <div class="cat-label"><div><h3>Men</h3><span class="count">98 pieces</span></div>
+            <span class="go"><svg viewBox="0 0 24 24" width="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Featured product grid ===== -->
+  <section class="section section-tight" id="shop" aria-labelledby="shop-h">
+    <div class="container-x">
+      <div class="section-head reveal">
+        <div>
+          <span class="eyebrow">The edit</span>
+          <h2 class="section-title" id="shop-h">Winter favourites</h2>
+        </div>
+        <div class="filter-bar" role="tablist" aria-label="Filter products by category">
+          <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
+          <button class="filter-btn" data-filter="women" role="tab" aria-selected="false">Women</button>
+          <button class="filter-btn" data-filter="men" role="tab" aria-selected="false">Men</button>
+        </div>
+      </div>
+
+      <div class="product-grid" id="productGrid">
+
+        <!-- 1 -->
+        <article class="product-card reveal" data-cat="women"
+          data-id="marlowe-coat" data-name="The Marlowe Wool Coat" data-price="248" data-img="img/p1.jpg">
+          <div class="pc-media">
+            <div class="pc-badges"><span class="badge-v sale">-20%</span></div>
+            <button class="pc-wish" aria-label="Add The Marlowe Wool Coat to wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 20s-7-4.5-9.5-9C1 8 2.5 4.5 6 4.5c2 0 3 1.2 3.8 2.3C10.6 5.7 11.7 4.5 13.7 4.5c3.5 0 5 3.5 3.5 6.5C15.7 15.5 12 20 12 20Z"/></svg></button>
+            <img src="img/p1.jpg" alt="The Marlowe wool coat in camel" width="420" height="560" loading="lazy">
+            <div class="pc-add"><button class="btn-v btn-block js-add" data-id="marlowe-coat" data-name="The Marlowe Wool Coat" data-price="248" data-img="img/p1.jpg" data-variant="Camel · M">Quick add</button></div>
+          </div>
+          <div class="pc-info">
+            <span class="pc-cat">Women · Outerwear</span>
+            <h3 class="pc-name"><a href="product.html">The Marlowe Wool Coat</a></h3>
+            <div class="pc-price"><span class="now on-sale">$248</span><span class="was">$310</span></div>
+            <div class="pc-swatches"><span class="pc-swatch" style="background:#c9a578" title="Camel"></span><span class="pc-swatch" style="background:#1c1a17" title="Black"></span><span class="pc-swatch" style="background:#5c5b52" title="Olive"></span></div>
+          </div>
+        </article>
+
+        <!-- 2 -->
+        <article class="product-card reveal reveal-d1" data-cat="men"
+          data-id="camden-blazer" data-name="Camden Relaxed Blazer" data-price="189" data-img="img/p2.jpg">
+          <div class="pc-media">
+            <button class="pc-wish" aria-label="Add Camden Relaxed Blazer to wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 20s-7-4.5-9.5-9C1 8 2.5 4.5 6 4.5c2 0 3 1.2 3.8 2.3C10.6 5.7 11.7 4.5 13.7 4.5c3.5 0 5 3.5 3.5 6.5C15.7 15.5 12 20 12 20Z"/></svg></button>
+            <img src="img/p2.jpg" alt="Camden relaxed blazer in charcoal wool" width="420" height="560" loading="lazy">
+            <div class="pc-add"><button class="btn-v btn-block js-add" data-id="camden-blazer" data-name="Camden Relaxed Blazer" data-price="189" data-img="img/p2.jpg" data-variant="Charcoal · M">Quick add</button></div>
+          </div>
+          <div class="pc-info">
+            <span class="pc-cat">Men · Tailoring</span>
+            <h3 class="pc-name"><a href="product.html">Camden Relaxed Blazer</a></h3>
+            <div class="pc-price"><span class="now">$189</span></div>
+            <div class="pc-swatches"><span class="pc-swatch" style="background:#3a3a3f" title="Charcoal"></span><span class="pc-swatch" style="background:#6d5d48" title="Tobacco"></span></div>
+          </div>
+        </article>
+
+        <!-- 3 -->
+        <article class="product-card reveal reveal-d2" data-cat="women"
+          data-id="odette-dress" data-name="Odette Silk Slip Dress" data-price="164" data-img="img/p3.jpg">
+          <div class="pc-media">
+            <div class="pc-badges"><span class="badge-v new">New</span></div>
+            <button class="pc-wish" aria-label="Add Odette Silk Slip Dress to wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 20s-7-4.5-9.5-9C1 8 2.5 4.5 6 4.5c2 0 3 1.2 3.8 2.3C10.6 5.7 11.7 4.5 13.7 4.5c3.5 0 5 3.5 3.5 6.5C15.7 15.5 12 20 12 20Z"/></svg></button>
+            <img src="img/p3.jpg" alt="Odette silk slip dress in deep burgundy" width="420" height="560" loading="lazy">
+            <div class="pc-add"><button class="btn-v btn-block js-add" data-id="odette-dress" data-name="Odette Silk Slip Dress" data-price="164" data-img="img/p3.jpg" data-variant="Burgundy · S">Quick add</button></div>
+          </div>
+          <div class="pc-info">
+            <span class="pc-cat">Women · Dresses</span>
+            <h3 class="pc-name"><a href="product.html">Odette Silk Slip Dress</a></h3>
+            <div class="pc-price"><span class="now">$164</span></div>
+            <div class="pc-swatches"><span class="pc-swatch" style="background:#7c2b3b" title="Burgundy"></span><span class="pc-swatch" style="background:#1c1a17" title="Black"></span><span class="pc-swatch" style="background:#d8c3a5" title="Champagne"></span></div>
+          </div>
+        </article>
+
+        <!-- 4 -->
+        <article class="product-card reveal reveal-d3" data-cat="men"
+          data-id="field-jacket" data-name="Field Waxed Jacket" data-price="228" data-img="img/p4.jpg">
+          <div class="pc-media">
+            <button class="pc-wish" aria-label="Add Field Waxed Jacket to wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 20s-7-4.5-9.5-9C1 8 2.5 4.5 6 4.5c2 0 3 1.2 3.8 2.3C10.6 5.7 11.7 4.5 13.7 4.5c3.5 0 5 3.5 3.5 6.5C15.7 15.5 12 20 12 20Z"/></svg></button>
+            <img src="img/p4.jpg" alt="Field waxed cotton jacket in olive" width="420" height="560" loading="lazy">
+            <div class="pc-add"><button class="btn-v btn-block js-add" data-id="field-jacket" data-name="Field Waxed Jacket" data-price="228" data-img="img/p4.jpg" data-variant="Olive · L">Quick add</button></div>
+          </div>
+          <div class="pc-info">
+            <span class="pc-cat">Men · Outerwear</span>
+            <h3 class="pc-name"><a href="product.html">Field Waxed Jacket</a></h3>
+            <div class="pc-price"><span class="now">$228</span></div>
+            <div class="pc-swatches"><span class="pc-swatch" style="background:#5c5b52" title="Olive"></span><span class="pc-swatch" style="background:#4a3b2e" title="Brown"></span></div>
+          </div>
+        </article>
+
+        <!-- 7 -->
+        <article class="product-card reveal reveal-d2" data-cat="women"
+          data-id="astrid-knit" data-name="Astrid Ribbed Knit" data-price="88" data-img="img/p7.jpg">
+          <div class="pc-media">
+            <div class="pc-badges"><span class="badge-v new">New</span></div>
+            <button class="pc-wish" aria-label="Add Astrid Ribbed Knit to wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 20s-7-4.5-9.5-9C1 8 2.5 4.5 6 4.5c2 0 3 1.2 3.8 2.3C10.6 5.7 11.7 4.5 13.7 4.5c3.5 0 5 3.5 3.5 6.5C15.7 15.5 12 20 12 20Z"/></svg></button>
+            <img src="img/p7.jpg" alt="Astrid ribbed merino knit in oatmeal" width="420" height="560" loading="lazy">
+            <div class="pc-add"><button class="btn-v btn-block js-add" data-id="astrid-knit" data-name="Astrid Ribbed Knit" data-price="88" data-img="img/p7.jpg" data-variant="Oatmeal · M">Quick add</button></div>
+          </div>
+          <div class="pc-info">
+            <span class="pc-cat">Women · Knitwear</span>
+            <h3 class="pc-name"><a href="product.html">Astrid Ribbed Knit</a></h3>
+            <div class="pc-price"><span class="now">$88</span></div>
+            <div class="pc-swatches"><span class="pc-swatch" style="background:#ddd0b8" title="Oatmeal"></span><span class="pc-swatch" style="background:#7c2b3b" title="Burgundy"></span><span class="pc-swatch" style="background:#3a4a44" title="Forest"></span></div>
+          </div>
+        </article>
+
+        <!-- 8 -->
+        <article class="product-card reveal reveal-d3" data-cat="men"
+          data-id="sutton-shirt" data-name="Sutton Oxford Shirt" data-price="76" data-img="img/p8.jpg">
+          <div class="pc-media">
+            <button class="pc-wish" aria-label="Add Sutton Oxford Shirt to wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 20s-7-4.5-9.5-9C1 8 2.5 4.5 6 4.5c2 0 3 1.2 3.8 2.3C10.6 5.7 11.7 4.5 13.7 4.5c3.5 0 5 3.5 3.5 6.5C15.7 15.5 12 20 12 20Z"/></svg></button>
+            <img src="img/p8.jpg" alt="Sutton oxford shirt in ecru cotton" width="420" height="560" loading="lazy">
+            <div class="pc-add"><button class="btn-v btn-block js-add" data-id="sutton-shirt" data-name="Sutton Oxford Shirt" data-price="76" data-img="img/p8.jpg" data-variant="Ecru · M">Quick add</button></div>
+          </div>
+          <div class="pc-info">
+            <span class="pc-cat">Men · Shirts</span>
+            <h3 class="pc-name"><a href="product.html">Sutton Oxford Shirt</a></h3>
+            <div class="pc-price"><span class="now">$76</span></div>
+            <div class="pc-swatches"><span class="pc-swatch" style="background:#eae3d4" title="Ecru"></span><span class="pc-swatch" style="background:#9fb0c0" title="Blue"></span></div>
+          </div>
+        </article>
+
+      </div>
+      <p id="noResults" class="text-center lede mx-auto" style="display:none; margin-top:2rem;">No pieces in this category yet — check back soon.</p>
+    </div>
+  </section>
+
+  <!-- ===== New arrivals scroll snap ===== -->
+  <section class="section" id="new" aria-labelledby="new-h" style="background:var(--paper-2);">
+    <div class="container-x">
+      <div class="section-head reveal">
+        <div>
+          <span class="eyebrow">Just landed</span>
+          <h2 class="section-title" id="new-h">New arrivals</h2>
+        </div>
+        <div class="snap-nav">
+          <button id="snapPrev" aria-label="Scroll to previous arrivals"><svg viewBox="0 0 24 24" width="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
+          <button id="snapNext" aria-label="Scroll to next arrivals"><svg viewBox="0 0 24 24" width="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+        </div>
+      </div>
+    </div>
+    <div class="container-x">
+      <div class="snap-row" id="snapRow">
+        <article class="snap-item">
+          <div class="pc-media">
+            <button class="pc-wish" aria-label="Add Halden Wide Trouser to wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 20s-7-4.5-9.5-9C1 8 2.5 4.5 6 4.5c2 0 3 1.2 3.8 2.3C10.6 5.7 11.7 4.5 13.7 4.5c3.5 0 5 3.5 3.5 6.5C15.7 15.5 12 20 12 20Z"/></svg></button>
+            <img src="img/n2.jpg" alt="Halden wide-leg wool trouser in stone" width="300" height="400" loading="lazy">
+            <div class="pc-add"><button class="btn-v btn-block js-add" data-id="halden-trouser" data-name="Halden Wide Trouser" data-price="118" data-img="img/n2.jpg" data-variant="Stone · 30">Quick add</button></div>
+          </div>
+          <div class="pc-info"><span class="pc-cat">Women · Trousers</span><h3 class="pc-name"><a href="product.html">Halden Wide Trouser</a></h3><div class="pc-price"><span class="now">$118</span></div></div>
+        </article>
+        <article class="snap-item">
+          <div class="pc-media">
+            <button class="pc-wish" aria-label="Add Bexley Cable Cardigan to wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 20s-7-4.5-9.5-9C1 8 2.5 4.5 6 4.5c2 0 3 1.2 3.8 2.3C10.6 5.7 11.7 4.5 13.7 4.5c3.5 0 5 3.5 3.5 6.5C15.7 15.5 12 20 12 20Z"/></svg></button>
+            <img src="img/n3.jpg" alt="Bexley chunky cable cardigan in forest green" width="300" height="400" loading="lazy">
+            <div class="pc-add"><button class="btn-v btn-block js-add" data-id="bexley-cardigan" data-name="Bexley Cable Cardigan" data-price="134" data-img="img/n3.jpg" data-variant="Forest · M">Quick add</button></div>
+          </div>
+          <div class="pc-info"><span class="pc-cat">Men · Knitwear</span><h3 class="pc-name"><a href="product.html">Bexley Cable Cardigan</a></h3><div class="pc-price"><span class="now">$134</span></div></div>
+        </article>
+        <article class="snap-item">
+          <div class="pc-media">
+            <div class="pc-badges"><span class="badge-v new">New</span></div>
+            <button class="pc-wish" aria-label="Add Pierce Merino Polo to wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 20s-7-4.5-9.5-9C1 8 2.5 4.5 6 4.5c2 0 3 1.2 3.8 2.3C10.6 5.7 11.7 4.5 13.7 4.5c3.5 0 5 3.5 3.5 6.5C15.7 15.5 12 20 12 20Z"/></svg></button>
+            <img src="img/n5.jpg" alt="Pierce merino knitted polo in navy" width="300" height="400" loading="lazy">
+            <div class="pc-add"><button class="btn-v btn-block js-add" data-id="pierce-polo" data-name="Pierce Merino Polo" data-price="96" data-img="img/n5.jpg" data-variant="Navy · M">Quick add</button></div>
+          </div>
+          <div class="pc-info"><span class="pc-cat">Men · Knitwear</span><h3 class="pc-name"><a href="product.html">Pierce Merino Polo</a></h3><div class="pc-price"><span class="now">$96</span></div></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Lookbook ===== -->
+  <section class="section lookbook" id="lookbook" aria-labelledby="look-h">
+    <div class="container-x">
+      <div class="section-head center reveal">
+        <span class="eyebrow center">The AW journal</span>
+        <h2 class="section-title" id="look-h">Two ways to wear winter</h2>
+      </div>
+      <div class="look-grid">
+        <article class="look-card reveal">
+          <img src="img/look-1.jpg" alt="Editorial look: layered wool coat over knit and wide trousers" width="640" height="800" loading="lazy">
+          <div class="look-body">
+            <h3>The City Layer</h3>
+            <p>Structured tailoring softened with heavyweight knits — built for grey mornings and long commutes.</p>
+            <a href="#shop" class="btn-v btn-light">Shop the look</a>
+          </div>
+        </article>
+        <article class="look-card reveal reveal-d1">
+          <img src="img/look-2.jpg" alt="Editorial look: waxed jacket with cable cardigan and boots" width="640" height="800" loading="lazy">
+          <div class="look-body">
+            <h3>The Weekend Away</h3>
+            <p>Waxed cotton, cable knits and leather boots — pieces that earn their keep off the beaten track.</p>
+            <a href="#shop" class="btn-v btn-light">Shop the look</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Promo / countdown ===== -->
+  <section class="section-tight promo-strip" id="sale" aria-labelledby="promo-h">
+    <div class="container-x">
+      <div class="promo-inner">
+        <div>
+          <span class="eyebrow center" style="color:#f3d6da; justify-content:flex-start;">Winter private sale</span>
+          <h2 id="promo-h">Up to 30% off outerwear</h2>
+          <p>Members-only pricing on coats, jackets and knitwear. Ends when the clock runs out.</p>
+        </div>
+        <div class="countdown" id="countdown" role="timer" aria-label="Sale countdown">
+          <div class="cd-unit"><span class="num" data-cd="days">02</span><span class="lab">Days</span></div>
+          <div class="cd-unit"><span class="num" data-cd="hours">00</span><span class="lab">Hours</span></div>
+          <div class="cd-unit"><span class="num" data-cd="mins">00</span><span class="lab">Mins</span></div>
+          <div class="cd-unit"><span class="num" data-cd="secs">00</span><span class="lab">Secs</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Brand values ===== -->
+  <section class="section" aria-labelledby="values-h">
+    <div class="container-x">
+      <div class="section-head center reveal">
+        <span class="eyebrow center">Why ApnaAdda</span>
+        <h2 class="section-title" id="values-h">Made to be worn for years</h2>
+      </div>
+      <div class="values-grid">
+        <div class="value-card reveal">
+          <div class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 8h13v8H3zM16 11h3l2 3v2h-5z"/><circle cx="7" cy="18" r="1.6"/><circle cx="18" cy="18" r="1.6"/></svg></div>
+          <h3>Free carbon-neutral shipping</h3>
+          <p>Complimentary express delivery on every order over $150, offset at the source and tracked door to door.</p>
+        </div>
+        <div class="value-card reveal reveal-d1">
+          <div class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v4h4"/></svg></div>
+          <h3>30-day easy returns</h3>
+          <p>Changed your mind? Send it back within 30 days, tags on, for a full refund. Prepaid label in every box.</p>
+        </div>
+        <div class="value-card reveal reveal-d2">
+          <div class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <h3>Secure encrypted checkout</h3>
+          <p>Pay with confidence — every transaction is protected by bank-grade encryption and trusted providers.</p>
+        </div>
+      </div>
+
+      <div class="stats-row reveal" style="margin-top:clamp(3rem,6vw,5rem);" id="stats">
+        <div class="stat"><div class="num" data-count="42">0</div><div class="lab">Countries shipped</div></div>
+        <div class="stat"><div class="num" data-count="18" data-suffix="K">0</div><div class="lab">Five-star reviews</div></div>
+        <div class="stat"><div class="num" data-count="96" data-suffix="%">0</div><div class="lab">Would buy again</div></div>
+        <div class="stat"><div class="num" data-count="12">0</div><div class="lab">Years in the making</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Testimonials ===== -->
+  <section class="section" style="background:var(--paper-2);" aria-labelledby="testi-h">
+    <div class="container-x">
+      <div class="section-head center reveal">
+        <span class="eyebrow center">Loved by customers</span>
+        <h2 class="section-title" id="testi-h">Worn and reviewed</h2>
+      </div>
+      <div class="testi reveal">
+        <div class="testi-track" id="testiTrack">
+          <div class="testi-slide active">
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <p class="testi-quote">The Marlowe coat is the best thing I've bought in years — the wool is heavy in the right way and the cut actually flatters. Three winters in and it still looks new.</p>
+            <div class="testi-who"><img src="img/review-1.jpg" alt="Portrait of Elena Whitfield" width="46" height="46" loading="lazy"><div><div class="n">Elena Whitfield</div><div class="r">Verified buyer · London</div></div></div>
+          </div>
+          <div class="testi-slide">
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <p class="testi-quote">Everything arrives beautifully packed and the returns are genuinely effortless. I've reordered the Sutton shirt in every colour they make.</p>
+            <div class="testi-who"><img src="img/review-2.jpg" alt="Portrait of Marcus Reyes" width="46" height="46" loading="lazy"><div><div class="n">Marcus Reyes</div><div class="r">Verified buyer · Toronto</div></div></div>
+          </div>
+          <div class="testi-slide">
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <p class="testi-quote">Sizing is spot on and the quality punches well above the price. ApnaAdda has quietly replaced most of my wardrobe.</p>
+            <div class="testi-who"><img src="img/review-3.jpg" alt="Portrait of Priya Anand" width="46" height="46" loading="lazy"><div><div class="n">Priya Anand</div><div class="r">Verified buyer · Melbourne</div></div></div>
+          </div>
+        </div>
+        <div class="testi-dots" id="testiDots" role="tablist" aria-label="Choose testimonial">
+          <button class="active" aria-label="Testimonial 1"></button>
+          <button aria-label="Testimonial 2"></button>
+          <button aria-label="Testimonial 3"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Newsletter ===== -->
+  <section class="section newsletter" aria-labelledby="nl-h">
+    <div class="container-x">
+      <div class="nl-inner reveal">
+        <span class="eyebrow center">Join the list</span>
+        <h2 class="section-title" id="nl-h">Get $15 off your first order</h2>
+        <p class="lede mx-auto" style="margin-top:0.8rem;">Early access to new drops, private sales and styling notes — straight to your inbox, never more than twice a month.</p>
+        <form class="nl-form" id="nlForm" novalidate>
+          <input type="email" id="nlEmail" placeholder="Your email address" required aria-label="Email address">
+          <button type="submit" class="btn-v btn-wine">Subscribe</button>
+        </form>
+        <p class="nl-ok" id="nlOk">Thanks — check your inbox to confirm and claim your code.</p>
+        <p class="nl-note">By subscribing you agree to our privacy policy. Unsubscribe anytime.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== Footer ===== -->
+<footer class="site-footer">
+  <div class="container-x">
+    <div class="footer-top">
+      <div>
+        <span class="brand">ApnaAdda<span class="dot">.</span></span>
+        <p class="footer-about">Considered, small-batch clothing in natural materials — designed in Copenhagen, made to be worn for years, not seasons.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="ApnaAdda on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="#" aria-label="ApnaAdda on Pinterest"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M8 20c1-3 2-6 2-6M12 3a7 7 0 0 0-3 13c-.2-1 .1-2 .4-3 .3-1 1-4 1-4a2.4 2.4 0 0 1-.2-1c0-1 .6-1.8 1.4-1.8.7 0 1 .5 1 1.1 0 .7-.4 1.7-.7 2.7-.2.8.4 1.5 1.2 1.5 2.5-1.9-1.9-4.1C16.6 6.6 15 5 12.8 5"/></svg></a>
+          <a href="#" aria-label="ApnaAdda on TikTok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M15 4c.4 2.3 1.9 3.8 4 4v3c-1.7 0-3-.5-4-1.2V16a5 5 0 1 1-5-5v3a2 2 0 1 1 2 2V4z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="new.html">New Arrivals</a></li>
+          <li><a href="women.html">Women</a></li>
+          <li><a href="men.html">Men</a></li>
+          <li><a href="sale.html">Sale</a></li>
+          <li><a href="#">Gift Cards</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Help</h4>
+        <ul>
+          <li><a href="#">Shipping &amp; Delivery</a></li>
+          <li><a href="#">Returns &amp; Exchanges</a></li>
+          <li><a href="#">Size Guide</a></li>
+          <li><a href="#">Track Your Order</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul class="footer-contact">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 6l8 6 8-6M4 6h16v12H4z"/></svg><span>hello@apnaadda.com</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M6 4l3 1 1 4-2 1a11 11 0 0 0 5 5l1-2 4 1 1 3a2 2 0 0 1-2 2A15 15 0 0 1 4 6a2 2 0 0 1 2-2z"/></svg><span>+45 32 14 09 88</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 21s-7-5.2-7-11a7 7 0 0 1 14 0c0 5.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Studio 4, Vesterbro, Copenhagen</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 ApnaAdda. All rights reserved.</p>
+      <div class="footer-pay">
+        <span>Visa</span><span>Mastercard</span><span>Amex</span><span>PayPal</span><span>Klarna</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== Cart drawer (shared markup) ===== -->
+<div class="scrim" id="cartScrim"></div>
+<aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart" role="dialog" aria-modal="true">
+  <div class="cart-head">
+    <h2>Your Bag <span class="qty-note" id="cartQtyNote">0 items</span></h2>
+    <button class="icon-btn" id="cartClose" aria-label="Close cart">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+  </div>
+  <div class="cart-free">
+    <span id="cartFreeMsg"><strong>$150</strong> away from free express shipping</span>
+    <div class="cart-progress"><span id="cartProgress"></span></div>
+  </div>
+  <div class="cart-items" id="cartItems">
+    <div class="cart-empty" id="cartEmpty">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+      <p>Your bag is empty.<br>Time to find something lovely.</p>
+      <button class="btn-v btn-ghost" id="cartEmptyShop">Start shopping</button>
+    </div>
+  </div>
+  <div class="cart-foot" id="cartFoot" hidden>
+    <div class="cart-sub"><span class="l">Subtotal</span><span class="v" id="cartSubtotal">$0</span></div>
+    <p class="cart-ship-note">Shipping &amp; taxes calculated at checkout.</p>
+    <button class="btn-v btn-wine btn-block btn-lg" id="cartCheckout">Checkout securely</button>
+    <button class="btn-v btn-whatsapp btn-block" id="whatsappCheckout" type="button">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 4.1A11.8 11.8 0 0 0 12.1.8C5.6.8.4 6 .4 12.4c0 2 .5 3.9 1.5 5.6L.3 23.2l5.3-1.5a11.7 11.7 0 0 0 6.5 1.9h.1c6.4 0 11.6-5.2 11.6-11.7 0-3-1.3-5.8-3.8-7.8Zm-7.8 17.5h-.1c-1.8 0-3.6-.5-5.1-1.5l-.4-.2-3.1.9.9-3-.2-.4a9.6 9.6 0 0 1-1.5-5.1c0-5.3 4.3-9.6 9.6-9.6 2.6 0 5 1 6.8 2.8a9.5 9.5 0 0 1 2.8 6.8c0 5.3-4.3 9.6-9.7 9.6Zm5.3-7.2c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-1 1.1-.2.2-.4.2-.7.1-1.7-.8-2.8-1.5-3.9-3.4-.3-.5.3-.5.8-1.6.1-.2.1-.4 0-.6-.1-.1-.7-1.6-.9-2.2-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.6s1.1 3 1.3 3.2c.2.2 2.2 3.4 5.4 4.8 2 .9 2 .6 2.4.6.4 0 1.7-.7 1.9-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.6-.3Z"/></svg>
+      Shop with WhatsApp
+    </button>
+    <div class="cart-continue"><button id="cartContinue">Continue shopping</button></div>
+  </div>
+</aside>
+
+<!-- ===== Checkout ===== -->
+<div class="checkout-modal" id="checkoutModal" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle">
+  <div class="checkout-panel">
+    <div class="checkout-head"><div><span class="eyebrow">Secure checkout</span><h2 id="checkoutTitle">Almost yours</h2></div><button class="icon-btn" id="checkoutClose" aria-label="Close checkout"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+    <p class="checkout-copy">Enter your email and continue to our secure payment provider. Card details are never stored on this site.</p>
+    <form id="checkoutForm">
+      <label class="checkout-label" for="checkoutEmail">Email address</label>
+      <input class="checkout-input" type="email" id="checkoutEmail" placeholder="you@example.com" required>
+      <div class="payment-options" aria-label="Payment methods"><span>Accepted at checkout</span><b>VISA</b><b>MC</b><b>AMEX</b><b>PayPal</b></div>
+      <button class="btn-v btn-wine btn-block btn-lg" type="submit">Continue to payment</button>
+    </form>
+    <p class="checkout-note">Payments use Razorpay. Your server must create the order at <code>/api/create-razorpay-order</code> with secret credentials.</p>
+  </div>
+</div>
+
+<!-- ===== Toast ===== -->
+<div class="toast" id="toast" role="status" aria-live="polite">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+  <span id="toastMsg">Added to bag</span>
+</div>
+
+<script src="js/vendor/bootstrap.bundle.min.js"></script>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script src="js/main.js"></script>
+<script src="js/layout.js"></script>
+</body>
+</html>

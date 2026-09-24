@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Account — ApnaAdda</title>
+  <meta name="description" content="Sign in to your ApnaAdda account.">
+  <meta name="google-client-id" content="793127348188-9atvaj7tvks90c6397sg30rpl0dgn8f4.apps.googleusercontent.com">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="announce">Free express shipping on orders over ₹150 &nbsp;·&nbsp; 30-day easy returns</div>
+  <header class="site-header">
+    <div class="container-x"><div class="nav-inner">
+      <a class="brand" href="index.html" aria-label="ApnaAdda home">ApnaAdda<span class="dot">.</span></a>
+      <nav aria-label="Primary"><ul class="nav-links"><li><a href="shop.html">Shop</a></li><li><a href="new.html">New In</a></li><li><a href="women.html">Women</a></li><li><a href="men.html">Men</a></li><li><a href="index.html#lookbook">Lookbook</a></li><li><a href="sale.html" class="text-wine">Sale</a></li></ul></nav>
+      <div class="nav-actions"><a class="icon-btn" href="shop.html" aria-label="Open shop">Bag</a></div>
+    </div></div>
+  </header>
+  <main id="main">
+    <section class="section account-page"><div class="container-x"><div class="account-panel">
+      <div id="accountAuth"><span class="eyebrow">Your account</span><h1 class="section-title" id="accountTitle">Welcome back.</h1><p class="lede" id="accountIntro">Sign in to view orders, saved pieces and delivery details.</p>
+      <div class="account-tabs" role="tablist" aria-label="Account access"><button class="account-tab active" type="button" data-mode="login" role="tab" aria-selected="true">Sign in</button><button class="account-tab" type="button" data-mode="register" role="tab" aria-selected="false">Create account</button></div>
+      <div class="google-login" id="googleLogin"><button class="google-btn" type="button" id="googleButton"><span class="google-mark">G</span> Continue with Google</button><p class="account-note">Google sign-in needs your OAuth client ID.</p></div>
+      <div class="account-divider"><span>or use email</span></div>
+      <form class="account-form" id="accountForm"><div id="nameField" hidden><label for="accountName">Full name</label><input id="accountName" type="text" placeholder="Your name"></div><label for="accountEmail">Email address</label><input id="accountEmail" type="email" required placeholder="you@example.com"><label for="accountPassword">Password</label><input id="accountPassword" type="password" minlength="6" required placeholder="At least 6 characters"><button class="btn-v btn-wine btn-block" id="accountSubmit" type="submit">Sign in</button></form><p id="accountMessage" class="account-message" hidden></p><a class="link-underline account-create" href="mailto:hello@apnaadda.com">Contact us for account help</a></div>
+      <div id="accountDashboard" class="account-dashboard" hidden><div class="account-dashboard-head"><div><span class="eyebrow">Your account</span><h1 class="section-title">Hello, <span id="dashboardName">there</span>.</h1><p class="lede" id="dashboardEmail"></p></div><button class="btn-v btn-ghost" id="accountLogout" type="button">Sign out</button></div><div class="account-grid"><a class="account-card" href="#orders"><span class="account-card-kicker">Orders</span><strong>Order history</strong><span>Track recent purchases and returns.</span></a><a class="account-card" href="#settings"><span class="account-card-kicker">Settings</span><strong>Profile &amp; delivery</strong><span>Manage your personal details and addresses.</span></a><a class="account-card" href="shop.html"><span class="account-card-kicker">Saved pieces</span><strong>Continue shopping</strong><span>Find your next everyday favourite.</span></a></div><section class="account-orders" id="orders"><div class="account-section-head"><div><span class="eyebrow">Orders</span><h2>Order history</h2></div><span class="order-status">No orders yet</span></div><p>Your completed orders will appear here after checkout.</p><a class="link-underline" href="shop.html">Start shopping</a></section><section class="account-settings" id="settings"><div class="account-section-head"><div><span class="eyebrow">Settings</span><h2>Profile details</h2></div></div><div class="settings-row"><span>Name</span><strong id="settingsName">-</strong></div><div class="settings-row"><span>Email</span><strong id="settingsEmail">-</strong></div><a class="link-underline" href="mailto:hello@apnaadda.com">Request an account change</a></section></div>
+    </div></div></section>
+  </main>
+  <footer class="site-footer"></footer>
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <script src="js/layout.js"></script>
+  <script src="js/account.js"></script>
+</body>
+</html>
